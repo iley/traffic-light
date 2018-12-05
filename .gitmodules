@@ -1,0 +1,3 @@
+[submodule "third_party/kicad-ESP8266"]
+	path = third_party/kicad-ESP8266
+	url = https://github.com/jdunmire/kicad-ESP8266.git
