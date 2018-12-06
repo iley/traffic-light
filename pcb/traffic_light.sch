@@ -865,10 +865,10 @@ RED
 NoConn ~ 5430 2120
 NoConn ~ 5430 2320
 $Comp
-L Connector:Conn_01x04_Female UART
+L Connector:Conn_01x04_Female UART1
 U 1 1 5C0B813A
 P 8220 1920
-F 0 "UART" H 8248 1896 50  0000 L CNN
+F 0 "UART1" H 8248 1896 50  0000 L CNN
 F 1 "Serial" H 8248 1805 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8220 1920 50  0001 C CNN
 F 3 "~" H 8220 1920 50  0001 C CNN
