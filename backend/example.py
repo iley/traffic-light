@@ -12,6 +12,7 @@ def main():
     args = parser.parse_args()
 
     client = boto3.client("iot-data")
+
     states = [{"red": "on", "yellow": "off", "green": "off"},
               {"red": "off", "yellow": "on", "green": "off"},
               {"red": "off", "yellow": "off", "green": "on"}]
