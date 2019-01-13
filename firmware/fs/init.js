@@ -1,5 +1,6 @@
 load('api_gpio.js');
 load('api_aws.js');
+load('api_timer.js');
 
 let pins = {
     "red": 12,
@@ -13,17 +14,36 @@ let state = {
     "green": "off"
 };
 
+function write(pinName, value) {
+    GPIO.write(pins[pinName], value);
+}
+
 for (let pinName in pins) {
     GPIO.set_mode(pins[pinName], GPIO.MODE_OUTPUT);
 }
 
+// Blink all lights on boot.
+let booting = true;
+for (let pinName in pins) {
+    write(pinName, 1);
+}
+
+Timer.set(1000, 0, function() {
+    booting = false;
+    enforceState(state);
+}, null);
+
 function enforceState(newState) {
     for (let pinName in pins) {
         if (newState[pinName] === "on") {
-            GPIO.write(pins[pinName], 1);
+            if (!booting) {
+                write(pinName, 1);
+            }
             state[pinName] = "on";
         } else {
-            GPIO.write(pins[pinName], 0);
+            if (!booting) {
+                write(pinName, 0);
+            }
             state[pinName] = "off";
         }
     }
