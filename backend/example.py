@@ -7,7 +7,7 @@ import time
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--thing", default="TrafficLight",
+    parser.add_argument("--thing", default="TrafficLightCloud",
                         help="Name of the AWS IOT thing")
     args = parser.parse_args()
 
