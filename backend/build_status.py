@@ -38,8 +38,11 @@ def update_status(bamboo_url, bamboo_plan, thing_name):
     status = get_bamboo_status(bamboo_url, bamboo_plan, auth)
     print("last status is %s" % status)
 
-    state = {"red": "off", "yellow": "off", "green": "off"}
-    state[status] = "on"
+    if status == "unknown":
+        state = {"red": "on", "yellow": "on", "green": "on"}
+    else:
+        state = {"red": "off", "yellow": "off", "green": "off"}
+        state[status] = "on"
 
     iot_client = boto3.client("iot-data")
     shadow = {"state": {"desired": state} }
@@ -51,7 +54,8 @@ def update_status(bamboo_url, bamboo_plan, thing_name):
 def get_bamboo_status(base_url, plan, auth):
     full_url = "%s/rest/api/latest/result/%s.json" % (base_url, plan)
     resp = requests.get(full_url, auth=auth)
-    resp.raise_for_status()
+    if resp.status_code != requests.codes.ok:
+        return "unknown"
     data = resp.json()
     last_result = data["results"]["result"][0]
     if last_result["state"] == "Successful":
