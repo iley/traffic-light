@@ -34,7 +34,11 @@ Timer.set(1000, 0, function() {
 }, null);
 
 function enforceState(newState) {
-    for (let pinName in pins) {
+    for (let pinName in newState) {
+        if (pins[pinName] === undefined) {
+            print("skipping unknown pin: " + pinName);
+            continue;
+        }
         if (newState[pinName] === "on") {
             if (!booting) {
                 write(pinName, 1);
