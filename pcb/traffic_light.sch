@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:traffic_light-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -843,17 +843,6 @@ F 3 "~" H 8220 1920 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:VCC #PWR0121
-U 1 1 5C0BD195
-P 8020 1820
-F 0 "#PWR0121" H 8020 1670 50  0001 C CNN
-F 1 "VCC" H 8037 1993 50  0000 C CNN
-F 2 "" H 8020 1820 50  0001 C CNN
-F 3 "" H 8020 1820 50  0001 C CNN
-	1    8020 1820
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0122
 U 1 1 5C0BD64D
 P 7950 2180
@@ -910,23 +899,23 @@ Wire Wire Line
 $Comp
 L Connector:Screw_Terminal_01x02 VIN1
 U 1 1 5C0DA213
-P 1610 2550
-F 0 "VIN1" H 1530 2225 50  0000 C CNN
-F 1 "Power" H 1530 2316 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1610 2550 50  0001 C CNN
-F 3 "~" H 1610 2550 50  0001 C CNN
-	1    1610 2550
+P 2210 2550
+F 0 "VIN1" H 2130 2225 50  0000 C CNN
+F 1 "Power" H 2130 2316 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2210 2550 50  0001 C CNN
+F 3 "~" H 2210 2550 50  0001 C CNN
+	1    2210 2550
 	-1   0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR0126
 U 1 1 5C0DD276
-P 1810 2550
-F 0 "#PWR0126" H 1810 2300 50  0001 C CNN
-F 1 "GND" H 1815 2377 50  0000 C CNN
-F 2 "" H 1810 2550 50  0001 C CNN
-F 3 "" H 1810 2550 50  0001 C CNN
-	1    1810 2550
+P 2410 2550
+F 0 "#PWR0126" H 2410 2300 50  0001 C CNN
+F 1 "GND" H 2415 2377 50  0000 C CNN
+F 2 "" H 2410 2550 50  0001 C CNN
+F 3 "" H 2410 2550 50  0001 C CNN
+	1    2410 2550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -963,24 +952,9 @@ F 3 "" H 3350 2750 50  0001 C CNN
 	1    3350 2750
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:Jumper SW1
-U 1 1 5C0EB53D
-P 2180 2450
-F 0 "SW1" H 2180 2714 50  0000 C CNN
-F 1 "Power_Switch" H 2180 2623 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2180 2450 50  0001 C CNN
-F 3 "~" H 2180 2450 50  0001 C CNN
-	1    2180 2450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2660 2450 2590 2450
-Wire Wire Line
-	2480 2450 2590 2450
 Connection ~ 2590 2450
-Wire Wire Line
-	1810 2450 1880 2450
 $Comp
 L power:+5V #PWR0103
 U 1 1 5C0BA233
@@ -1044,4 +1018,17 @@ F 3 "" H 2590 2750 50  0001 C CNN
 	1    2590 2750
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:+5V #PWR0121
+U 1 1 5CC9FB36
+P 8020 1820
+F 0 "#PWR0121" H 8020 1670 50  0001 C CNN
+F 1 "+5V" H 8035 1993 50  0000 C CNN
+F 2 "" H 8020 1820 50  0001 C CNN
+F 3 "" H 8020 1820 50  0001 C CNN
+	1    8020 1820
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2410 2450 2590 2450
 $EndSCHEMATC
