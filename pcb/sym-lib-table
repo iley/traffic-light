@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name ESP8266)(type Legacy)(uri /Users/iley/projects/traffic_light/third_party/kicad-ESP8266/ESP8266.lib)(options "")(descr ""))
+  (lib (name traffic_light-rescue)(type Legacy)(uri ${KIPRJMOD}/traffic_light-rescue.lib)(options "")(descr ""))
 )
